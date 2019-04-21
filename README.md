@@ -7,5 +7,5 @@ uno de los elementos que caracterizan (de una manera general) a cada una de las 
 
 Integrantes:
 
-- Luis Alejandro Ocampo 
+- Luis Alejandro Ocampo. 
 - Nestor David Bohorquez.
