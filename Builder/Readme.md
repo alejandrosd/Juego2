@@ -1,3 +1,3 @@
 Builder
 
-En esta version del Juego, se implementa un nuevo patron de diseño creacional, el Builder, qué, tomando lo hecho en la anterior version del juego, se utlizan los elementos del catalogo de cada fabrica(Ingenieros) para construir al Ingeniero seleccionado, sin poderse mezclar los productos de alguna fabrica con otra, ya que hay una unica seleccion de elementos por ingeniero.
+En esta versión del Juego, se implementa un nuevo patrón de diseño creacional, el Builder, qué, tomando lo hecho en la anterior versión del juego, se utilizan los elementos del catálogo de cada fabrica(Ingenieros) para construir al Ingeniero seleccionado, sin poderse mezclar los productos de alguna fabrica con otra, ya que hay una única selección de elementos por ingeniero.
