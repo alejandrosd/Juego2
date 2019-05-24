@@ -5,7 +5,6 @@
  */
 package logica.Adapter;
 
-//import catalogopersonajes.Personajes;
 import catalogopersonajes.Personajes;
 import java.awt.Component;
 import java.awt.Graphics;
