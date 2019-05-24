@@ -130,6 +130,8 @@ public class EngineerFactoryView extends javax.swing.JFrame {
         lblSoftware.addMouseListener(getCtlEnginnerFactoryView());
         lblElectrical.addMouseListener(getCtlEnginnerFactoryView());
         lblCivil.addMouseListener(getCtlEnginnerFactoryView());
+        
+        lblOrco.addMouseListener(getCtlEnginnerFactoryView());
     }
 
     public Game getModelo() {
@@ -287,6 +289,10 @@ public class EngineerFactoryView extends javax.swing.JFrame {
         this.numListeners = numListeners;
     }
 
+    public JLabel getLblOrco() {
+        return lblOrco;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -306,6 +312,7 @@ public class EngineerFactoryView extends javax.swing.JFrame {
         lblAccessory = new javax.swing.JLabel();
         lblTool = new javax.swing.JLabel();
         lblVehicle = new javax.swing.JLabel();
+        lblOrco = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -340,6 +347,13 @@ public class EngineerFactoryView extends javax.swing.JFrame {
         getContentPane().add(lblVehicle);
         lblVehicle.setBounds(210, 300, 110, 40);
 
+        lblOrco.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        lblOrco.setForeground(new java.awt.Color(255, 255, 255));
+        lblOrco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOrco.setText("Orco");
+        getContentPane().add(lblOrco);
+        lblOrco.setBounds(520, 330, 120, 30);
+
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/images/ingeniero_base.jpg"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 800, 400);
@@ -357,6 +371,7 @@ public class EngineerFactoryView extends javax.swing.JFrame {
     private javax.swing.JLabel lblCreate;
     private javax.swing.JLabel lblElectrical;
     private javax.swing.JLabel lblEngrProduct;
+    private javax.swing.JLabel lblOrco;
     private javax.swing.JLabel lblSoftware;
     private javax.swing.JLabel lblTool;
     private javax.swing.JLabel lblVehicle;

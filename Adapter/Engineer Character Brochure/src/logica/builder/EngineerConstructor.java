@@ -22,4 +22,6 @@ public abstract class EngineerConstructor {
     public abstract void buildTool();
 
     public abstract void buildVehicle();
+    
+    public abstract void ingeniar();
 }

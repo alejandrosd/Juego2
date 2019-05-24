@@ -3,6 +3,7 @@ package presentacion.modelo;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import logica.Adapter.Adapter;
 import logica.abstractfactory.factories.AbstractFactory;
 import logica.abstractfactory.factories.CivilEngineerFactory;
 import logica.abstractfactory.factories.ElectricalEngineerFactory;
@@ -35,6 +36,10 @@ public class Game {
     private Director director;
     private Engineer preDegreeEngr;
 
+    private Adapter orcoAdapter;
+
+    private boolean Adapter;
+
     public Game() {
 
     }
@@ -45,8 +50,6 @@ public class Game {
     }
 
     public void chooseFactory(int i) {
-        JLabel lblBgEngWindow = getVentanaEng().getLblBgEngWindow();
-
         switch (i) {
             case 0:
                 factory = new SoftwareEngineerFactory();
@@ -88,15 +91,6 @@ public class Game {
         director.buildEngineer();
 
         preDegreeEngr = director.getEngineer();
-
-        /*if(getFactory() instanceof SoftwareEngineerFactory) {
-            preDegreeEngr.getImgsEngr()[0] = new ImageIcon();
-            
-        }else if(getFactory() instanceof PreDegreeEngineer) {
-            
-        }else if(getFactory() instanceof CivilEngineerFactory) {
-            
-        }*/
     }
 
     public void onListeners(JLabel[] labels, MouseListener controller) {
@@ -199,6 +193,22 @@ public class Game {
 
     public Engineer getPreDegreeEngr() {
         return preDegreeEngr;
+    }
+
+    public Adapter getOrcoAdapter() {
+        if (orcoAdapter == null) {
+            orcoAdapter = new Adapter();
+            orcoAdapter.buildEnginner();
+        }
+        return orcoAdapter;
+    }
+
+    public boolean isAdapter() {
+        return Adapter;
+    }
+
+    public void setAdapter(boolean Adapter) {
+        this.Adapter = Adapter;
     }
 
 }

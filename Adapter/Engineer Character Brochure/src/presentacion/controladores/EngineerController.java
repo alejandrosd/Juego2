@@ -38,18 +38,37 @@ public class EngineerController implements MouseListener {
 
             lblBackground.setIcon(imgBgEnFactoryWindow);
 
+            if (modelo.isAdapter()) {
+                modelo.getPreDegreeEngr().setIsAnimado(false);
+            } else {
+                modelo.getOrcoAdapter().setIsAnimado(false);
+            }
+
+            modelo.getVentanaEng().getLblEngr().setIcon(null);
+
             modelo.getVentanaEng().getLblEngr().setVisible(true);
             modelo.getVentanaEng().getLienzo().setVisible(false);
 
             modelo.getVentanaEngFactory().setVisible(true);
             modelo.getVentanaEng().setVisible(false);
+
+            modelo.setAdapter(true);
         } else if (e.getSource().equals(ventanaEngineer.getLblIngeniar())) {
             modelo.getVentanaEng().getLienzo().setVisible(true);
             modelo.getVentanaEng().getLblEngr().setVisible(false);
 
-            modelo.getPreDegreeEngr().ingeniar(ventanaEngineer.getLienzo());
+            if (modelo.isAdapter()) {
+                modelo.getPreDegreeEngr().ingeniar(ventanaEngineer.getLienzo());
+            } else {
+                modelo.getOrcoAdapter().ingeniar(ventanaEngineer.getLienzo());
+            }
+
         } else if (e.getSource().equals(ventanaEngineer.getLblBgEngWindow())) {
-            modelo.getPreDegreeEngr().setIsAnimado(false);
+            if (modelo.isAdapter()) {
+                modelo.getPreDegreeEngr().setIsAnimado(false);
+            } else {
+                modelo.getOrcoAdapter().setIsAnimado(false);
+            }
         }
     }
 

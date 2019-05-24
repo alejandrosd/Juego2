@@ -77,6 +77,25 @@ public class EngineerFactoryController implements MouseListener {
 
                 background.setIcon(ventanaEngFactory.getImgCivilCreate());
             }
+        } else if (e.getSource().equals(ventanaEngFactory.getLblOrco())) {
+            /*if (modelo.check(states) != 2) {
+                modelo.selectEngineer(2);
+
+                modelo.chooseFactory(modelo.check(states));
+                modelo.showEngrParts();
+
+                modelo.onListeners(ventanaEngFactory.getLblsProducts(), this);
+
+                modelo.changeListenerLblCreate();
+
+                background.setIcon(ventanaEngFactory.getImgCivilCreate());
+            }*/
+            modelo.getOrcoAdapter();
+            
+            modelo.setAdapter(false);
+            
+            modelo.getVentanaEng().setVisible(true);
+            modelo.getVentanaEngFactory().setVisible(false);
         } else if (e.getSource().equals(ventanaEngFactory.getLblBackground())) {
             ventanaEngFactory.initStates();
             modelo.changeListenerLblCreate();
@@ -172,6 +191,9 @@ public class EngineerFactoryController implements MouseListener {
             } else {
                 ventanaEngFactory.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
             }
+        } else if (e.getSource().equals(ventanaEngFactory.getLblOrco())) {
+            ventanaEngFactory.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         } else if (e.getSource().equals(ventanaEngFactory.getLblCreate())) {
             if (modelo.check(states) != -1) {
                 ventanaEngFactory.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -231,7 +253,8 @@ public class EngineerFactoryController implements MouseListener {
                 || (e.getSource().equals(ventanaEngFactory.getLblCreate()))
                 || (e.getSource().equals(ventanaEngFactory.getLblsProducts()[0]))
                 || (e.getSource().equals(ventanaEngFactory.getLblsProducts()[1]))
-                || (e.getSource().equals(ventanaEngFactory.getLblsProducts()[2]))) {
+                || (e.getSource().equals(ventanaEngFactory.getLblsProducts()[2]))
+                || (e.getSource().equals(ventanaEngFactory.getLblOrco()))) {
 
             ventanaEngFactory.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
         }

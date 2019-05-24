@@ -36,5 +36,10 @@ public class SoftwareEngineer extends EngineerConstructor {
     public void buildVehicle() {
         engineer.setVehicle(factory.createVehicle());
     }
+
+    @Override
+    public void ingeniar() {
+        
+    }
     
 }
