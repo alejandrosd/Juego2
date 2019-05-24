@@ -1,3 +1,5 @@
 Builder.
 
 En esta versión del Juego, se implementa un nuevo patrón de diseño creacional, el Builder, qué, tomando lo hecho en la anterior versión del juego, se utilizan los elementos del catálogo de cada fabrica(Ingenieros) para construir al Ingeniero seleccionado, sin poderse mezclar los productos de alguna fabrica con otra, ya que hay una única selección de elementos por ingeniero.
+
+El proceso se implementó en la carpeta logica.builder, que al acceder a dicha carpeta se podra encontrar con la clase Director(la que se encarga que llamar el resto de metodos y construir al personaje), la clase SoftwareEngineer(cuya tarea es responder al llamado del director y asignar un articulo a cada instancia, dependiendo del ingeniero), la clase Engineer(esta clase controla al ingeniero construido), la clase abstracta EngineerConstructor(crea las instancias para construir al ingeniero y sus articulos), y por ultimo la clase PreDegreeEngineer(su tarea es mostrar graficamente a los personajes y sus articulos, animando al personaje seleccionado).
