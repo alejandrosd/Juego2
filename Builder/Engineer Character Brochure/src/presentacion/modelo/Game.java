@@ -3,6 +3,7 @@ package presentacion.modelo;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import logica.Adapter.Adapter;
 import logica.abstractfactory.factories.AbstractFactory;
 import logica.abstractfactory.factories.CivilEngineerFactory;
 import logica.abstractfactory.factories.ElectricalEngineerFactory;
@@ -13,8 +14,8 @@ import presentacion.vistas.EngineerFactoryView;
 import presentacion.vistas.EngineerView;
 import presentacion.vistas.PrincipalView;
 import logica.abstractfactory.products.Accessory;
+import logica.builder.AbsEngineer;
 import logica.builder.Director;
-import logica.builder.Engineer;
 import logica.builder.PreDegreeEngineer;
 
 /**
@@ -33,10 +34,14 @@ public class Game {
     private EngineerView ventanaEng;
 
     private Director director;
-    private Engineer preDegreeEngr;
+    private AbsEngineer preDegreeEngr;
+
+    private AbsEngineer orcoAdapter;
+    
+    private boolean chooseAbsEngr;
 
     public Game() {
-
+        
     }
 
     public void iniciar() {
@@ -88,15 +93,13 @@ public class Game {
         director.buildEngineer();
 
         preDegreeEngr = director.getEngineer();
+    }
 
-        /*if(getFactory() instanceof SoftwareEngineerFactory) {
-            preDegreeEngr.getImgsEngr()[0] = new ImageIcon();
-            
-        }else if(getFactory() instanceof PreDegreeEngineer) {
-            
-        }else if(getFactory() instanceof CivilEngineerFactory) {
-            
-        }*/
+    public AbsEngineer getOrcoAdapter() {
+        if (orcoAdapter == null) {
+            orcoAdapter = new Adapter(this);
+        }
+        return orcoAdapter;
     }
 
     public void onListeners(JLabel[] labels, MouseListener controller) {
@@ -197,8 +200,16 @@ public class Game {
         return director;
     }
 
-    public Engineer getPreDegreeEngr() {
+    public AbsEngineer getPreDegreeEngr() {
         return preDegreeEngr;
+    }
+
+    public boolean isChooseAbsEngr() {
+        return chooseAbsEngr;
+    }
+
+    public void setChooseAbsEngr(boolean chooseAbsEngr) {
+        this.chooseAbsEngr = chooseAbsEngr;
     }
 
 }

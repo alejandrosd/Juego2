@@ -12,7 +12,7 @@ public class Director {
         this.constructor = constructor;
     }
 
-    public Engineer getEngineer() {
+    public AbsEngineer getEngineer() {
         return constructor.getEngineer();
     }
 

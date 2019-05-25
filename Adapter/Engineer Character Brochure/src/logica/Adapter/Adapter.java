@@ -46,6 +46,7 @@ public class Adapter extends EngineerConstructor implements Runnable {
             numImage = 0;
         }
 
+        
         Graphics lapiz = dobleBuffre.getGraphics();
         lapiz.drawImage(bkgdLienzo.getImage(), 0, 0, lienzo);
 
@@ -85,7 +86,6 @@ public class Adapter extends EngineerConstructor implements Runnable {
     @Override
     public void buildEnginner() {
         orco = new Personajes("Orco");
-
         imgsEngr[0] = orco.getPj().imagen(0);
         imgsEngr[1] = orco.getPj().imagen(1);
         imgsEngr[2] = orco.getPj().imagen(2);
