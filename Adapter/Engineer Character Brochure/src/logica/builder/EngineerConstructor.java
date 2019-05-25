@@ -8,10 +8,10 @@ import logica.abstractfactory.factories.AbstractFactory;
  */
 public abstract class EngineerConstructor {
 
-    protected Engineer engineer;
+    protected AbsEngineer engineer;
     protected AbstractFactory factory;
 
-    public Engineer getEngineer() {
+    public AbsEngineer getEngineer() {
         return engineer;
     }
 
@@ -22,6 +22,4 @@ public abstract class EngineerConstructor {
     public abstract void buildTool();
 
     public abstract void buildVehicle();
-    
-    public abstract void ingeniar();
 }

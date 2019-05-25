@@ -57,9 +57,4 @@ public class PreDegreeEngineer extends EngineerConstructor {
         engineer.setVehicle(factory.createVehicle());
     }
 
-    @Override
-    public void ingeniar() {
-        
-    }
-
 }

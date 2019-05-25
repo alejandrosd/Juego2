@@ -14,8 +14,8 @@ import presentacion.vistas.EngineerFactoryView;
 import presentacion.vistas.EngineerView;
 import presentacion.vistas.PrincipalView;
 import logica.abstractfactory.products.Accessory;
+import logica.builder.AbsEngineer;
 import logica.builder.Director;
-import logica.builder.Engineer;
 import logica.builder.PreDegreeEngineer;
 
 /**
@@ -34,14 +34,14 @@ public class Game {
     private EngineerView ventanaEng;
 
     private Director director;
-    private Engineer preDegreeEngr;
+    private AbsEngineer preDegreeEngr;
 
-    private Adapter orcoAdapter;
-
-    private boolean Adapter;
+    private AbsEngineer orcoAdapter;
+    
+    private boolean chooseAbsEngr;
 
     public Game() {
-
+        
     }
 
     public void iniciar() {
@@ -50,6 +50,8 @@ public class Game {
     }
 
     public void chooseFactory(int i) {
+        JLabel lblBgEngWindow = getVentanaEng().getLblBgEngWindow();
+
         switch (i) {
             case 0:
                 factory = new SoftwareEngineerFactory();
@@ -91,6 +93,13 @@ public class Game {
         director.buildEngineer();
 
         preDegreeEngr = director.getEngineer();
+    }
+
+    public AbsEngineer getOrcoAdapter() {
+        if (orcoAdapter == null) {
+            orcoAdapter = new Adapter(this);
+        }
+        return orcoAdapter;
     }
 
     public void onListeners(JLabel[] labels, MouseListener controller) {
@@ -191,24 +200,16 @@ public class Game {
         return director;
     }
 
-    public Engineer getPreDegreeEngr() {
+    public AbsEngineer getPreDegreeEngr() {
         return preDegreeEngr;
     }
 
-    public Adapter getOrcoAdapter() {
-        if (orcoAdapter == null) {
-            orcoAdapter = new Adapter();
-            orcoAdapter.buildEnginner();
-        }
-        return orcoAdapter;
+    public boolean isChooseAbsEngr() {
+        return chooseAbsEngr;
     }
 
-    public boolean isAdapter() {
-        return Adapter;
-    }
-
-    public void setAdapter(boolean Adapter) {
-        this.Adapter = Adapter;
+    public void setChooseAbsEngr(boolean chooseAbsEngr) {
+        this.chooseAbsEngr = chooseAbsEngr;
     }
 
 }

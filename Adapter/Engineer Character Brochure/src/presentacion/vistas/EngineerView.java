@@ -1,6 +1,8 @@
 package presentacion.vistas;
 
 import java.awt.Canvas;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import presentacion.controladores.EngineerController;
 import presentacion.modelo.Game;
@@ -115,6 +117,7 @@ public class EngineerView extends javax.swing.JFrame {
         getContentPane().add(lblIngeniar);
         lblIngeniar.setBounds(530, 140, 100, 100);
 
+        lblEngr.setText("jLabel1");
         lblEngr.setPreferredSize(new java.awt.Dimension(326, 261));
         getContentPane().add(lblEngr);
         lblEngr.setBounds(60, 64, 326, 261);

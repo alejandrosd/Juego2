@@ -10,285 +10,285 @@ import presentacion.modelo.Game;
  * @author David Bohorquez
  */
 public class EngineerFactoryView extends javax.swing.JFrame {
-
+    
     private Game modelo;
     private EngineerFactoryController ctlEnginnerFactoryView;
-
+    
     private ImageIcon imgBase;
-
+    
     private ImageIcon imgSoftware;
     private ImageIcon imgSoftCreate;
-
+    
     private ImageIcon imgElectrical;
     private ImageIcon imgElectCreate;
-
+    
     private ImageIcon imgCivil;
     private ImageIcon imgCivilCreate;
-
+    
     private ImageIcon imgElectSoft;
     private ImageIcon imgCivilSoft;
-
+    
     private ImageIcon imgSoftElect;
     private ImageIcon imgCivilElect;
-
+    
     private ImageIcon imgSoftCivil;
     private ImageIcon imgElectCivil;
-
+    
     private boolean[] imgStates;
-
+    
     private JLabel[] lblsProducts;
-
+    
     private ImageIcon imgSoftAccessory;
     private ImageIcon imgSoftTool;
     private ImageIcon imgSoftVehicle;
-
+    
     private ImageIcon imgElectAccessory;
     private ImageIcon imgElectTool;
     private ImageIcon imgElectVehicle;
-
+    
     private ImageIcon imgCivilAccessory;
     private ImageIcon imgCivilTool;
     private ImageIcon imgCivilVehicle;
-
+    
     private int numListeners;
-
+    
     public EngineerFactoryView(Game modelo) {
         this.modelo = modelo;
-
+        
         initComponents();
-
+        
         asignarListeners();
         fix();
     }
-
+    
     public void fix() {
         setSize(800, 400);
         setLocationRelativeTo(null);
-
+        
         getCtlEnginnerFactoryView();
-
+        
         imgBase = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base.jpg"));
-
+        
         imgSoftware = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(sistemas).jpg"));
         imgSoftCreate = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion sistemas).jpg"));
-
+        
         imgElectrical = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(electrico).jpg"));
         imgElectCreate = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion electrico).jpg"));
-
+        
         imgCivil = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(civil).jpg"));
         imgCivilCreate = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion civil).jpg"));
-
+        
         imgElectSoft = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion electrico - sistemas).jpg"));
         imgCivilSoft = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion civil - pre sistemas).jpg"));
-
+        
         imgSoftElect = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion sistemas - pre electrica).jpg"));
         imgCivilElect = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion civil - pre electrico).jpg"));
-
+        
         imgSoftCivil = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion sistemas - pre civil).jpg"));
         imgElectCivil = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_base(seleccion electrico - pre civil).jpg"));
-
+        
         imgStates = new boolean[3];
-
+        
         initStates();
-
+        
         lblsProducts = new JLabel[3];
-
+        
         initProdLabels();
-
+        
         imgSoftAccessory = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_sistemas_accessory.jpg"));
         imgSoftTool = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_sistemas_tool.jpg"));
         imgSoftVehicle = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_sistemas_vehicle.jpg"));
-
+        
         imgElectAccessory = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_electrico_accessory.jpg"));
         imgElectTool = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_electrico_tool.jpg"));
         imgElectVehicle = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_electrico_vehicle.jpg"));
-
+        
         imgCivilAccessory = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_civil_accessory.jpg"));
         imgCivilTool = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_civil_tool.jpg"));
         imgCivilVehicle = new ImageIcon(getClass().getResource("/recursos/images/ingeniero_civil_vehicle.jpg"));
-
+        
         numListeners = 0;
     }
-
+    
     public void initStates() {
         for (int i = 0; i < 3; i++) {
             imgStates[i] = false;
         }
     }
-
+    
     public void initProdLabels() {
         lblsProducts[0] = lblAccessory;
         lblsProducts[1] = lblTool;
         lblsProducts[2] = lblVehicle;
     }
-
+    
     public void asignarListeners() {
         lblBackground.addMouseListener(getCtlEnginnerFactoryView());
         lblClose.addMouseListener(getCtlEnginnerFactoryView());
         lblBack.addMouseListener(getCtlEnginnerFactoryView());
-
+        
         lblSoftware.addMouseListener(getCtlEnginnerFactoryView());
         lblElectrical.addMouseListener(getCtlEnginnerFactoryView());
         lblCivil.addMouseListener(getCtlEnginnerFactoryView());
         
         lblOrco.addMouseListener(getCtlEnginnerFactoryView());
     }
-
+    
     public Game getModelo() {
         return modelo;
     }
-
+    
     public EngineerFactoryController getCtlEnginnerFactoryView() {
         if (ctlEnginnerFactoryView == null) {
             ctlEnginnerFactoryView = new EngineerFactoryController(this);
         }
         return ctlEnginnerFactoryView;
     }
-
+    
     public JLabel getLblCreate() {
         return lblCreate;
     }
-
+    
     public ImageIcon getImgCivilCreate() {
         return imgCivilCreate;
     }
-
+    
     public ImageIcon getImgElectCreate() {
         return imgElectCreate;
     }
-
+    
     public ImageIcon getImgSoftCivil() {
         return imgSoftCivil;
     }
-
+    
     public ImageIcon getImgElectCivil() {
         return imgElectCivil;
     }
-
+    
     public ImageIcon getImgCivilElect() {
         return imgCivilElect;
     }
-
+    
     public ImageIcon getImgSoftElect() {
         return imgSoftElect;
     }
-
+    
     public ImageIcon getImgCivilSoft() {
         return imgCivilSoft;
     }
-
+    
     public ImageIcon getImgElectSoft() {
         return imgElectSoft;
     }
-
+    
     public JLabel getLblBackground() {
         return lblBackground;
     }
-
+    
     public JLabel getLblClose() {
         return lblClose;
     }
-
+    
     public JLabel getLblBack() {
         return lblBack;
     }
-
+    
     public JLabel getLblCivil() {
         return lblCivil;
     }
-
+    
     public JLabel getLblElectrical() {
         return lblElectrical;
     }
-
+    
     public JLabel getLblSoftware() {
         return lblSoftware;
     }
-
+    
     public ImageIcon getImgBase() {
         return imgBase;
     }
-
+    
     public ImageIcon getImgSoftware() {
         return imgSoftware;
     }
-
+    
     public ImageIcon getImgElectrical() {
         return imgElectrical;
     }
-
+    
     public ImageIcon getImgCivil() {
         return imgCivil;
     }
-
+    
     public ImageIcon getImgSoftCreate() {
         return imgSoftCreate;
     }
-
+    
     public boolean[] getImgStates() {
         return imgStates;
     }
-
+    
     public JLabel getLblEngrProduct() {
         return lblEngrProduct;
     }
-
+    
     public JLabel[] getLblsProducts() {
         return lblsProducts;
     }
-
+    
     public JLabel getLblAccessory() {
         return lblAccessory;
     }
-
+    
     public ImageIcon getImgSoftAccessory() {
         return imgSoftAccessory;
     }
-
+    
     public ImageIcon getImgSoftTool() {
         return imgSoftTool;
     }
-
+    
     public ImageIcon getImgSoftVehicle() {
         return imgSoftVehicle;
     }
-
+    
     public ImageIcon getImgElectAccessory() {
         return imgElectAccessory;
     }
-
+    
     public ImageIcon getImgElectTool() {
         return imgElectTool;
     }
-
+    
     public ImageIcon getImgElectVehicle() {
         return imgElectVehicle;
     }
-
+    
     public ImageIcon getImgCivilAccessory() {
         return imgCivilAccessory;
     }
-
+    
     public ImageIcon getImgCivilTool() {
         return imgCivilTool;
     }
-
+    
     public ImageIcon getImgCivilVehicle() {
         return imgCivilVehicle;
     }
-
+    
     public int getNumListeners() {
         return numListeners;
     }
-
+    
     public void numListenersIncrement() {
         this.numListeners++;
     }
-
+    
     public void setNumListeners(int numListeners) {
         this.numListeners = numListeners;
     }
-
+    
     public JLabel getLblOrco() {
         return lblOrco;
     }
@@ -352,7 +352,7 @@ public class EngineerFactoryView extends javax.swing.JFrame {
         lblOrco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblOrco.setText("Orco");
         getContentPane().add(lblOrco);
-        lblOrco.setBounds(520, 330, 120, 30);
+        lblOrco.setBounds(530, 320, 100, 40);
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/images/ingeniero_base.jpg"))); // NOI18N
         getContentPane().add(lblBackground);

@@ -26,8 +26,6 @@ public class PrincipalController implements MouseListener, MouseMotionListener {
         if (e.getSource().equals(ventana.getLblClose())) {
             System.exit(0);
         } else if (e.getSource().equals(ventana.getLblPlay())) {
-            modelo.setAdapter(true);
-            
             modelo.getVentanaEngFactory().setVisible(true);
             modelo.getVentanaPrincipal().setVisible(false);
         }
